@@ -11,6 +11,13 @@ const bot = new TelegramBot(token, { polling: true });
 //     bot.sendMessage(data.from.id, `Halo perkenalkan saya ${botProfile.first_name}!\nSaya adalah chatbot untuk latihan belajar nodeJS`)
 // });
 
+bot.on("message", (data) =>{
+    console.log(data)
+    if(data.text == "kontol"){
+        bot.sendMessage(data.from.id, "Jangan toxic ya!")
+    }
+})
+
 // ini listener untuk message spesific sticker only
 bot.on("sticker", (data) =>{
     bot.sendMessage(data.from.id, "🤖")
